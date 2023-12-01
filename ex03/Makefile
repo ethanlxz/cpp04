@@ -1,15 +1,16 @@
 
-NAME = Animal
+NAME = Materia
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -fsanitize=address -std=c++98
 
 
 OBJS = obj/Main.o \
-	obj/Animal.o \
-	obj/Cat.o \
-	obj/Dog.o \
-	obj/Brain.o \
+	obj/AMateria.o \
+	obj/Character.o \
+	obj/Cure.o \
+	obj/Ice.o \
+	obj/MateriaSource.o \
 
 
 all: $(NAME)
