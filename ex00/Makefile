@@ -1,5 +1,5 @@
 
-NAME = House
+NAME = Animal
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -fsanitize=address -std=c++98
@@ -9,6 +9,8 @@ OBJS = obj/Main.o \
 	obj/Animal.o \
 	obj/Cat.o \
 	obj/Dog.o \
+	obj/WrongAnimal.o \
+	obj/WrongCat.o \
 
 
 all: $(NAME)
