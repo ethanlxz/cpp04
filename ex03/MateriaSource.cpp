@@ -28,7 +28,6 @@ MateriaSource::MateriaSource(const MateriaSource &oldMatSour)
 	}
 }
 
-//copy assignment overload
 MateriaSource	&MateriaSource::operator=(const MateriaSource &oldMatSour)
 {
 
@@ -52,7 +51,7 @@ MateriaSource	&MateriaSource::operator=(const MateriaSource &oldMatSour)
 
 MateriaSource::~MateriaSource(void)
 {
-	std::cout << "MateriaSource destructor has been called" << std::endl;
+	std::cout << "MateriaSource destructor called" << std::endl;
 
 	for (int i = 0; i < 4; i++)
 	{
@@ -75,11 +74,12 @@ void	MateriaSource::learnMateria(AMateria *oldMat)
 	}
 	if (i == 4)
 	{
-		std::cout << "Not enough memory for more Materia !" << std::endl;
+		std::cout << "\033[0;31mNot enough memory for more Materia !\033[0;0m" << std::endl;
 		delete oldMat;
 		return ;
 	}
 	tempMat[i] = oldMat;
+	std::cout << "\033[0;31mMateria Learned!\033[0;0m" << std::endl;
 }
 
 AMateria	*MateriaSource::createMateria(std::string const &type)
@@ -96,6 +96,7 @@ AMateria	*MateriaSource::createMateria(std::string const &type)
 			continue ;
 		if (tempMat[i]->getType() == type)
 		{
+			std::cout << "\033[0;34mMateria " << type << " has been created!\033[0;0m" << std::endl; 
 			return (tempMat[i]);
 		}
 	}

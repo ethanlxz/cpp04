@@ -89,7 +89,7 @@ Character	&Character::operator=(const Character &oldChar)
 
 Character::~Character(void)
 {
-	std::cout << "Character destructor has been called" << std::endl;
+	std::cout << "Character destructor called" << std::endl;
 
 	for (int i = 0; i < 4; i++)
 	{
@@ -124,16 +124,16 @@ void	Character::equip(AMateria *m)
 
 	if (j == 4)
 	{
-		std::cout << "Character inventory full! Can't equp." << std::endl;
+		std::cout << "Character inventory full! Can't equip." << std::endl;
 		m = NULL;
 		return ;
 	}
 	Inventory[j] = m->clone();
+	std::cout << "\033[0;32mEquipped: " << m->getType() << "\033[0;0m" << std::endl;
 }
 
 void	Character::unequip(int i)
 {
-	int i = 0;
 
 	if (Inventory[i] == NULL)
 	{
@@ -155,7 +155,7 @@ void	Character::unequip(int i)
 	toBeDeleted[i] = Inventory[i]->clone();
 	delete Inventory[i];
 	Inventory[i] = NULL;
-	std::cout << "Unequipped: "<< toBeDeleted[i]->getType() << std::endl;
+	std::cout << "\033[0;31mUnequipped: "<< toBeDeleted[i]->getType() << "\033[0;0m" << std::endl;
 }
 
 void	Character::use(int i, ICharacter &target)

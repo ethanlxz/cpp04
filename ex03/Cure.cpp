@@ -3,7 +3,7 @@
 Cure::Cure(void)
 {
 	std::cout << "Cure constructor called" << std::endl;
-	this->type = "Cure";
+	this->type = "cure";
 }
 
 Cure::Cure(const Cure &oldCure)
@@ -39,7 +39,7 @@ void	Cure::setType(const std::string Name)
 
 void	Cure::use(ICharacter	&type)
 {
-	std::cout << "* heals " << type.getName() << "'s wounds *" << std::endl;
+	std::cout << "\033[0;33m* heals " << type.getName() << "'s wounds *\033[0;0m" << std::endl;
 }
 
 std::string	Cure::getType(void) const

@@ -3,7 +3,7 @@
 Ice::Ice(void)
 {
 	std::cout << "Ice constructor called" << std::endl;
-	this->type = "Ice";
+	this->type = "ice";
 }
 
 Ice::Ice(const Ice &oldIce)
@@ -39,7 +39,7 @@ void	Ice::setType(const std::string Name)
 
 void	Ice::use(ICharacter	&type)
 {
-	std::cout << "* shoots ice bolt at " << type.getName() << " *" << std::endl;
+	std::cout << "\033[0;33m* shoots ice bolt at " << type.getName() << " *\033[0;0m" << std::endl;
 }
 
 std::string	Ice::getType(void) const
